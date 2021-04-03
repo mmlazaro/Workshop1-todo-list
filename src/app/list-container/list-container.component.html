@@ -1,8 +1,7 @@
 <div class="list-container">
     <ul>
         <li *ngFor="let item of todoItems">
-            <input type="checkbox" [checked]="item.done" (change)="listItemToggle(item)">
-            <span [ngClass]="{'done': item.done}">{{item.name}}</span>
+            <app-todo-item [todoItem]="item" (toggleItem)="listItemToggle(item)"></app-todo-item>
         </li>
     </ul>
 </div>

@@ -1,0 +1,2 @@
+<input type="checkbox" [checked]="todoItem.done" (change)="onListItemChange()">
+<span [ngClass]="{'done': todoItem.done}">{{todoItem.name}}</span>
