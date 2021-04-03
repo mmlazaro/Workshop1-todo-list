@@ -1,0 +1,21 @@
+ul {
+    list-style-type:none;
+    padding-inline-start: 0;
+}
+
+li {
+    padding: 10px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.list-container {
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.done {
+    text-decoration: line-through;
+}
