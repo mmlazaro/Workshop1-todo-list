@@ -1,0 +1,15 @@
+.list-summary {
+    padding: 10px;
+    display: flex;
+
+    div {
+        margin-right: 10px;
+    }
+
+    button {
+        background-color: transparent;
+        padding: 3px;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+}
