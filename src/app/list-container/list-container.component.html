@@ -1,4 +1,5 @@
 <div class="list-container">
+    <app-add-item (addItem)="addItem($event)"></app-add-item>
     <ul>
         <li *ngFor="let item of todoItems">
             <app-todo-item [todoItem]="item" [showDate]="dateVisible" (toggleItem)="listItemToggle(item)" 

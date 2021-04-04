@@ -20,6 +20,10 @@ export class ListContainerComponent implements OnInit {
     item.done = !item.done;
   }
 
+  addItem(item: TodoItem): void {
+    this.todoItems.push(item);
+  }
+
   deleteItem(toBeDeletedItem: TodoItem): void {
     this.todoItems = this.todoItems.filter(item => item !== toBeDeletedItem);
   }
