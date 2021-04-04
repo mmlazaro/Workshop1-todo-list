@@ -7,7 +7,7 @@
     </div>
     <div>
         <span *ngIf="showDate" class="date">
-            {{todoItem.createdDate}}
+            {{todoItem.createdDate | date: 'longDate'}}
         </span>
         <button (click)="onDeleteItem()">X</button>
     </div>
