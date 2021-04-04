@@ -1,2 +1,14 @@
-<input type="checkbox" [checked]="todoItem.done" (change)="onListItemChange()">
-<span [ngClass]="{'done': todoItem.done}">{{todoItem.name}}</span>
+<div class="item">
+    <div>
+        <input type="checkbox" [checked]="todoItem.done" (change)="onListItemChange()">
+        <span [ngClass]="{'done': todoItem.done}">
+            {{todoItem.name}}
+        </span>
+    </div>
+    <div>
+        <span *ngIf="showDate" class="date">
+            {{todoItem.createdDate}}
+        </span>
+        <button (click)="onDeleteItem()">X</button>
+    </div>
+</div>

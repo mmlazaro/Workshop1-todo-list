@@ -1,3 +1,4 @@
+import { debugOutputAstAsTypeScript } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoItem } from '../todo-item';
 
@@ -9,7 +10,9 @@ import { TodoItem } from '../todo-item';
 export class TodoItemComponent implements OnInit {
 
   @Input() todoItem!: TodoItem;
+  @Input() showDate = false;
   @Output() toggleItem: EventEmitter<void> = new EventEmitter<void>();
+  @Output() deleteItem: EventEmitter<void> = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +20,10 @@ export class TodoItemComponent implements OnInit {
 
   onListItemChange(): void {
     this.toggleItem.emit();
+  }
+
+  onDeleteItem(): void {
+    this.deleteItem.emit();
   }
 
 }

@@ -1,10 +1,10 @@
 <div class="list-summary">
-    <div>{{itemsCount}} items</div>
+    <div>{{doneItemsCount}} items left</div>
     <div>
-        <button>Clear completed</button>
+        <button (click)="onClearClick()" [disabled]="!areDoneItems">Clear completed</button>
     </div>
 
     <div>
-        <input type="checkbox">Show create date
+        <input type="checkbox" (change)="toggleDateVisibility()">Show create date
     </div>
 </div>

@@ -1,8 +1,12 @@
 <div class="list-container">
     <ul>
         <li *ngFor="let item of todoItems">
-            <app-todo-item [todoItem]="item" (toggleItem)="listItemToggle(item)"></app-todo-item>
+            <app-todo-item [todoItem]="item" [showDate]="dateVisible" (toggleItem)="listItemToggle(item)" 
+             (deleteItem)="deleteItem(item)">
+            </app-todo-item>
         </li>
     </ul>
-    <app-list-summary [todoItems]="todoItems"></app-list-summary>
+    <app-list-summary [todoItems]="todoItems" (clearCompleted)="clearCompletedItems()" 
+     (toggleDate)="toggleDateVisibility()">
+    </app-list-summary>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoItem } from '../todo-item';
 
 @Component({
@@ -9,13 +9,27 @@ import { TodoItem } from '../todo-item';
 export class ListSummaryComponent implements OnInit {
 
   @Input() todoItems!: TodoItem[];
+  @Output() clearCompleted: EventEmitter<void> = new EventEmitter<void>();
+  @Output() toggleDate: EventEmitter<void> = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  get itemsCount(): number {
+  get doneItemsCount(): number {
     return this.todoItems.filter(item => !item.done).length;
+  }
+
+  get areDoneItems(): boolean {
+    return this.todoItems.some(item => item.done);
+  }
+
+  onClearClick(): void {
+    this.clearCompleted.emit();
+  }
+
+  toggleDateVisibility(): void {
+    this.toggleDate.emit();
   }
 
 }
